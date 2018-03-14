@@ -1,3 +1,10 @@
+/*integrantes del grupo
+valeria liscano 
+peula andrea cabrera
+andres arroyave
+*/
+
+
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -38,14 +45,14 @@ void registro_info(){
 		cin>>ppeli[i].nombre;
 		cout<<"\nIngrese la Id de la pelicula:";
 		cin>>ppeli[i].peli_id;
-		cout<<"\n"<<i<<".)Ingrese la duracion de la pelicula:";
+		cout<<"\nIngrese la duracion de la pelicula:";
 		cin>>ppeli[i].duracion;
 		fflush(stdin);
-		cout<<"\n"<<i<<".)Ingrese el tipo de vision de la pelicula(3D, 2D):";
+		cout<<"\nIngrese el tipo de vision de la pelicula(3D, 2D):";
 		cin>>ppeli[i].tipo_vista;
-		cout<<"\n"<<i<<".)Ingrese la hora de inicio de la pelicula:";
+		cout<<"\nIngrese la hora de inicio de la pelicula:";
 		cin>>ppeli[i].hora_inicio;
-		cout<<"\n"<<i<<".)Ingrese en que sala sera la pelicula:";
+		cout<<"\nIngrese en que sala sera la pelicula:";
 		cin>>ppeli[i].sala;
 		
 		cout<<"\n\n";
@@ -91,7 +98,7 @@ void select(){
 int num, i,j;
 system("cls");
 cout<<"\n\n\tUSTED DECIDIO VER INFORMACION DEL USUARIO Y MODIFICAR.\n\n";
-cout<<"\n\n Ingrese la cantidad de usuarios que desee registrar:";
+cout<<"\n\n Ingrese la cantidad de usuarios que desee mostrar:";
 cin>>pusu->cant_usu;
 for(i=1;i<=pusu->cant_usu;i++){
 	fflush(stdin);
@@ -99,8 +106,10 @@ for(i=1;i<=pusu->cant_usu;i++){
 	cout<<"\nId del usuario:"<<pusu[i].id;
 	cout<<"\nBoletos comprados son:"<<pusu[i].boletos;
 	cout<<"\nla id de la pelicula es:"<<ppeli[i].peli_id;
+	fflush(stdin);
 }
-while(num!=3){
+
+do{
 cout<<"\n\nDesea modificar algun campo:\n";
 cout<<"1.)Modificar pelicula e id.\n";
 cout<<"2.)Modificar usuario e id.\n";
@@ -115,6 +124,7 @@ switch(num){
 		cin>>i;
 		cout<<"\n\nIngrese el nuevo nombre para la pelicula:";
 		cin>>ppeli[i].nombre;
+		fflush(stdin);
 		cout<<"\nIngrese el nuevo id para la pelicula:";
 		cin>>ppeli[i].peli_id;
 		cout<<"\n\nLa modificacion se ha guardado correctamente.\n\n";
@@ -127,6 +137,7 @@ switch(num){
 		cin>>i;
 		cout<<"\n\nIngrese el nuevo nombre del usuario:";
 		cin>>pusu[i].nom_usu;
+		fflush(stdin);
 		cout<<"\nIngrese el nuevo id de la persona:";
 		cin>>pusu[i].id;
 		cout<<"\n\nLa modificacion se ha guardado correctamente.\n\n";
@@ -138,7 +149,7 @@ switch(num){
 			system("pause");
 			system("cls");
 		}		
-	}
+	}while(num!=3);
 }
 
 int main(int argc, char** argv) {
@@ -173,4 +184,3 @@ int main(int argc, char** argv) {
 	
 	return 0;
 }
-
